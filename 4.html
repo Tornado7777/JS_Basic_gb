@@ -30,7 +30,7 @@
 
   const inputNumber = +prompt("Введите целое положительное число:") ;
 
-  const inputHundreds = Math.round( inputNumber / 100 );
+  const inputHundreds = Math.floor( inputNumber / 100 );
   let hundreds = 0;
   if (inputHundreds >= 10) {
     hundreds = inputHundreds % 10;
@@ -38,7 +38,7 @@
     hundreds = inputHundreds;
   }
   
-  const inputDozens = Math.round(( inputNumber - inputHundreds * 100 ) / 10 );
+  const inputDozens = Math.floor(( inputNumber - inputHundreds * 100 ) / 10 );
   const inputUnits = inputNumber % 10 ;
 
   console.log("В числе " + inputNumber + 
