@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
@@ -29,10 +31,89 @@ Infinity делать не нужно, однако, в случае если б
 
 Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    let arg1 = +prompt("Введите первое число: ");
+    let arg2 = +prompt("Введите второе число: ");
+    let operation = 
+          prompt('Введите математический оператор "+", "-", "*", "/" : ');
+
+    console.log(mathOperation( arg1, arg2, operation ));   
+
+    /**
+     * Функция выборы математических операций.
+     * @param {number} arg1 - Первое число.
+     * @param {number} arg2 - Второе число.
+     * @param {number} operation - Строка выбора операциию
+     * @return {number} Результат чисел или NaN.
+     */
+    function mathOperation(arg1, arg2, operation) {
+      let result = NaN;
+      switch (operation) {
+        case "+":
+          result = sum ( arg1, arg2);
+          break;
+        case "-":
+          result = dif ( arg1, arg2 );
+          break;
+        case "*":
+          result = multiplication ( arg1, arg2 )
+          break;
+        case "/":
+          result = division ( arg1, arg2 );
+          break;
+        default:
+          break;
+      }
+      return result;
+    }
+
+    /**
+     * Считает сумму переданных аргументов.
+     * @param {number} a - Первое число.
+     * @param {number} b - Второе число.
+     * @return {number} Сумма чисел.
+     */
+    function sum(a, b) {
+      return a + b;
+    };
+
+
+    /**
+     * Считает разницу переданных аргументов.
+     * @param {number} a - Первое число.
+     * @param {number} b - Второе число.
+     * @return {number} Разница чисел.
+     */
+    function dif(a, b) {
+      if (a > b) return a - b;
+      return b - a;
+    };
+
+
+    /**
+    * Считает произведение переданных аргументов.
+    * @param {number} a - Первое число.
+    * @param {number} b - Второе число.
+    * @return {number} Проиведение чисел.
+    */
+    function multiplication(a, b) {
+      return a * b;
+    };
+
+
+    /**
+     * Считает частное переданных аргументов.
+     * @param {number} a - Первое число.
+     * @param {number} b - Второе число.
+     * @return {number} Частное чисел.
+     */
+    function division(a, b) {
+      return a / b;
+    };
+
+  </script>
 </body>
+
 </html>

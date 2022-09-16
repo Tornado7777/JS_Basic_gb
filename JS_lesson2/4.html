@@ -31,7 +31,54 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  let a = +prompt("Введите первое число: ");
+  let b = +prompt("Введите второе число: ");
+
+  /**
+   * Считает сумму переданных аргументов.
+   * @param {number} a - Первое число.
+   * @param {number} b - Второе число.
+   * @return {number} Сумма чисел.
+   */
+  function sum( a , b ) {
+    return a + b;
+  };
+  console.log("1. Сложение " + a + " и " + b + " : "+ sum(a,b));
+
+  /**
+   * Считает разницу переданных аргументов.
+   * @param {number} a - Первое число.
+   * @param {number} b - Второе число.
+   * @return {number} Разница чисел.
+   */
+  function dif( a , b ) {
+    if ( a > b ) return a - b;
+    return b - a;
+  };
+  console.log(`2. Разность ${a} и ${b} : ${dif( a, b)} `);
+
+   /**
+   * Считает произведение переданных аргументов.
+   * @param {number} a - Первое число.
+   * @param {number} b - Второе число.
+   * @return {number} Проиведение чисел.
+   */
+  function multiplication( a , b ) {
+    return a * b;
+  };
+  console.log(`3. Умножение ${a} и ${b} : ${multiplication( a, b)} `);
+
+  /**
+   * Считает частное переданных аргументов.
+   * @param {number} a - Первое число.
+   * @param {number} b - Второе число.
+   * @return {number} Частное чисел.
+   */
+  function division( a , b ) {
+    return a / b;
+  };
+  console.log(`4. Деление ${a} и ${b} : ${division( a, b)} `);
+
 </script>
 </body>
 </html>
