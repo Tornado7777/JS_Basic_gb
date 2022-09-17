@@ -40,7 +40,7 @@
    * @param {number} b - Второе число.
    * @return {number} Сумма чисел.
    */
-  function sum( a , b ) {
+  function sum(a , b) {
     return a + b;
   };
   console.log("1. Сложение " + a + " и " + b + " : "+ sum(a,b));
@@ -51,10 +51,12 @@
    * @param {number} b - Второе число.
    * @return {number} Разница чисел.
    */
-  function dif( a , b ) {
-    if ( a > b ) return a - b;
+  function dif(a , b) {
+    if ( a > b ) { 
+      return a - b; 
+    }
     return b - a;
-  };
+  }
   console.log(`2. Разность ${a} и ${b} : ${dif( a, b)} `);
 
    /**
@@ -63,10 +65,10 @@
    * @param {number} b - Второе число.
    * @return {number} Проиведение чисел.
    */
-  function multiplication( a , b ) {
+  function multiplication(a , b) {
     return a * b;
-  };
-  console.log(`3. Умножение ${a} и ${b} : ${multiplication( a, b)} `);
+  }
+  console.log(`3. Умножение ${a} и ${b} : ${multiplication(a, b)} `);
 
   /**
    * Считает частное переданных аргументов.
@@ -74,10 +76,10 @@
    * @param {number} b - Второе число.
    * @return {number} Частное чисел.
    */
-  function division( a , b ) {
+  function division(a , b) {
     return a / b;
-  };
-  console.log(`4. Деление ${a} и ${b} : ${division( a, b)} `);
+  }
+  console.log(`4. Деление ${a} и ${b} : ${division(a, b)} `);
 
 </script>
 </body>
