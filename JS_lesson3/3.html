@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Дан массив products, необходимо цену каждого продукта уменьшить на 15% используя
 метод forEach.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  const products = [
-    {
-      id: 3,
-      price: 200,
-    },
-    {
-      id: 4,
-      price: 900,
-    },
-    {
-      id: 1,
-      price: 1000,
-    },
-  ];
+    const products = [
+      {
+        id: 3,
+        price: 200,
+      },
+      {
+        id: 4,
+        price: 900,
+      },
+      {
+        id: 1,
+        price: 1000,
+      },
+    ];
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    showObj("До ", products);
+    products.forEach(product => {
+      product.price = product.price * 0.85;
+    });
+    showObj("После ", products);
+
+    function showObj(comment, Obj) {
+      Obj.forEach(product => {
+        console.log(comment + "id: " + product.id + "; Цена: " + product.price);
+      });
+    }
+  </script>
 </body>
+
 </html>
