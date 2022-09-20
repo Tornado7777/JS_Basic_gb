@@ -28,7 +28,24 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  const inputNumber = +prompt("Введите целое положительное число:") ;
+
+  const inputHundreds = Math.floor( inputNumber / 100 );
+  let hundreds = 0;
+  if (inputHundreds >= 10) {
+    hundreds = inputHundreds % 10;
+  } else {
+    hundreds = inputHundreds;
+  }
+  
+  const inputDozens = Math.floor(( inputNumber - inputHundreds * 100 ) / 10 );
+  const inputUnits = inputNumber % 10 ;
+
+  console.log("В числе " + inputNumber + 
+  ". количество сотен: " + hundreds +
+  ", десятков: " + inputDozens + 
+  ", единиц: " + inputUnits);
+
 </script>
 </body>
 </html>
