@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Необязательное задание, но желательно сделать.
 
 Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
@@ -47,10 +49,84 @@
 что-нибудь пропустить.
 4. Если непонятно условие - задайте вопрос.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    //ES5
+
+    function PostES5(author, text) {
+      this._author = author;
+      this._text = text;
+      this._lastChangeDate = new Date();
+    }
+
+    PostES5.prototype.edit = function (text) {
+      this._lastChangeDate = new Date();
+      this._text = text;
+    }
+
+    function AttachedPostES5(author, text) {
+      PostES5.call(this, author, text);
+      this.highlighted = false;
+
+    }
+
+    AttachedPostES5.prototype = Object.create(PostES5.prototype);
+    AttachedPostES5.constructor = AttachedPostES5;
+
+    AttachedPostES5.prototype.makeTextHighlighted = function () {
+      this.highlighted = true;
+      this._lastChangeDate = new Date();
+    }
+
+    var postES5 = new PostES5('Валерия', "лоылмаоыдрдрорылр лдлрдлоородлр");
+    console.log(postES5);
+    postES5.edit('hjkkhkasaklakajd;');
+    console.log(postES5);
+    var attachedPostES5 = new AttachedPostES5('Владимир', 'лррооппрппааспппоп рпр')
+    console.log(attachedPostES5);
+    attachedPostES5.makeTextHighlighted();
+    console.log(attachedPostES5);
+
+    //ES6
+
+    class PostES6 {
+      constructor(author, text) {
+        this._author = author;
+        this._text = text;
+        this._lastChangeDate = new Date();
+      }
+
+      edit(text) {
+        this._lastChangeDate = new Date();
+        this._text = text;
+      }
+    }
+
+
+    class AttachedPostES6 extends PostES6 {
+      constructor(author, text) {
+        super(author, text);
+        this.highlighted = false;
+      }
+
+      makeTextHighlighted() {
+        this.highlighted = true;
+        this._lastChangeDate = new Date();
+      }
+    }
+
+    let postES6 = new PostES6('Валерия', "лоылмаоыдрдрорылр лдлрдлоородлр");
+    console.log(postES6);
+    postES6.edit('hjkkhkasaklakajd;');
+    console.log(postES6);
+    var attachedPostES6 = new AttachedPostES6('Владимир', 'лррооппрппааспппоп рпр')
+    console.log(attachedPostES6);
+    attachedPostES6.makeTextHighlighted();
+    console.log(attachedPostES6);
+
+
+  </script>
 </body>
+
 </html>

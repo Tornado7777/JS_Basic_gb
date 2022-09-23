@@ -31,7 +31,7 @@
     ProductES5.prototype.make25Discount = function () {
       this._price = this._price * 0.75;
       return this;
-    };
+    }
 
     var productES5 = new ProductES5('Шорты', 1000);
     console.log(productES5);
@@ -48,8 +48,8 @@
       make25Discount() {
         this._price = this._price * 0.75;
         return this;
-      };
-    }
+      }
+    };
 
     let productES6 = new ProductES6('Футболка', 800);
     console.log(productES6);
