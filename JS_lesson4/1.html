@@ -23,9 +23,37 @@
     "use strict";
 
     //ES5
-    
+    function ProductES5(name, price) {
+      this._name = name;
+      this._price = price;
+    }
+
+    ProductES5.prototype.make25Discount = function () {
+      this._price = this._price * 0.75;
+      return this;
+    }
+
+    var productES5 = new ProductES5('Шорты', 1000);
+    console.log(productES5);
+    console.log(productES5.make25Discount());
 
     //ES6
+
+    class ProductES6 {
+      constructor(name, price) {
+        this._name = name;
+        this._price = price;
+      }
+
+      make25Discount() {
+        this._price = this._price * 0.75;
+        return this;
+      }
+    };
+
+    let productES6 = new ProductES6('Футболка', 800);
+    console.log(productES6);
+    console.log(productES6.make25Discount());
 
   </script>
 </body>
