@@ -68,7 +68,6 @@
     function AttachedPostES5(author, text) {
       PostES5.call(this, author, text);
       this.highlighted = false;
-
     }
 
     AttachedPostES5.prototype = Object.create(PostES5.prototype);
@@ -105,10 +104,7 @@
 
 
     class AttachedPostES6 extends PostES6 {
-      constructor(author, text) {
-        super(author, text);
-        this.highlighted = false;
-      }
+      highlighted = false;
 
       makeTextHighlighted() {
         this.highlighted = true;

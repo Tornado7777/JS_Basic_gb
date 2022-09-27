@@ -32,12 +32,13 @@
 -->
   <script>
     "use strict";
+
     const inputNumber = +prompt("Введите целое положительное число:");
 
     function getDigitsOfNumber(inputNumber) {
       let result = {};
 
-      if (inputNumber != NaN && inputNumber >= 0 && inputNumber <= 999) {
+      if (Number.isInteger(inputNumber) && inputNumber >= 0 && inputNumber <= 999) {
         const inputUnits = inputNumber % 10;
         const inputDozens = Math.trunc(inputNumber / 10) % 10;
         const inputHundreds = Math.trunc(inputNumber / 100) % 10;
@@ -47,10 +48,10 @@
       }
 
       return result;
-
     }
 
     console.log(getDigitsOfNumber(inputNumber));
+    // inputNumber != NaN - это всегда будет правдой, NaN не равен ничему, даже другому NaN.
   </script>
 </body>
 
