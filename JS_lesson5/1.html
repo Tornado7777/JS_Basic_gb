@@ -81,14 +81,12 @@
      */
     const pElem = document.createElement('p');
     pElem.innerText = 'Привет';
-    const cardClass = document.querySelector('.card');
-    cardClass.appendChild(pElem);
+    document.querySelector('.card').prepend(pElem);
 
     /*
     8. Удалите тег h6 на странице.
      */
-    const h6Tag = document.querySelector('h6');
-    h6Tag.remove();
+    document.querySelector('h6').remove();
 
   </script>
 </body>

@@ -44,6 +44,10 @@
     присутствует у этого элемента, либо добавить, если такого класса у элемента
     не было.
      */
+
+    document.querySelector('.btn').classList.toggle('btn-secondary');
+
+    /*
     const btn = document.querySelector('.btn');
 
     if (btn.classList.contains('btn-secondary')) {
@@ -53,6 +57,7 @@
       btn.classList.add('btn-secondary');
       //console.log('add class btn-secondary ' + btn.classList);
     }
+    */
 
     /*
     3. Необходимо удалить класс "dropdown-menu" у элемента, у которого
@@ -93,9 +98,13 @@
     Атрибут "class" содержит значение "btn btn-secondary dropdown-toggle"
      */
 
-    document.querySelectorAll('.btn.dropdown-toggle').forEach(elem => {
-      console.log(`Атрибут "class" содержит значение "${elem.classList.value}"`);
-    });
+    const attributes = document
+      .querySelector('.btn.dropdown-toggle')
+      .attributes;
+
+    for (const attribute of attributes) {
+      console.log(`Атрибут "${attribute.name}" содержит значение "${attribute.value}"`);
+    }
 
   </script>
 </body>
