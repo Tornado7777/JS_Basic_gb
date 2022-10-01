@@ -66,9 +66,14 @@
     2. Необходимо вывести сообщение в консоль "страница загрузилась", когда все
     ресурсы страницы будут загружены.
     */
-    window.onload = () => {
+
+    document.addEventListener("load", () => {
       console.log("страница загрузилась");
-    };
+    });
+
+    // window.onload = () => {
+    //   console.log("страница загрузилась");
+    // };
 
     /*
     3. При клике на какой-либо тег на странице в консоль должно выводиться
@@ -80,7 +85,7 @@
     Необходимо использовать делегирование.
     */
     function clickTag(event) {
-      const nameElement = String(event.target.tagName);
+      const nameElement = event.target.tagName;
       const nameClass = event.target.className;
       if (nameClass === 'super_element') {
         console.log(`Класс "super_element" присутствует в элементе "${nameElement.toLocaleLowerCase()}".`);
@@ -103,7 +108,8 @@
     "Вы навели на textarea."
      */
     const textArea = document.querySelector('textarea');
-    textArea.addEventListener('mouseover', () => console.log('Вы навели на textarea.'));
+    textArea.addEventListener('mouseover', () =>
+      console.log('Вы навели на textarea.'));
 
 
     /*
@@ -132,6 +138,16 @@
     Соответственно, срабатывает в начале слушатели установленные на теге ul, а
     потом уже на теге body.
     */
+    /*
+    Мы в задании 3 и 5 повесили события на разные теги, в задании 3 на document,
+    в задании 5 на тег ul. Событие при клике всплывает после погружения, то есть
+    идет от элемента по которому был клик в родительские элементы и нам сначала
+    встретиться тег ul и только потом document, поэтому и события выполняются в
+    таком порядке.
+    Когда мы вешаем событие на родительский элемент и обрабатываем события детей
+    этого элемента - это называется делегированием события.
+    */
+
 
 
     /*
